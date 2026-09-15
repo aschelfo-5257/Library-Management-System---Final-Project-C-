@@ -6,7 +6,7 @@ This project simulates a small Library Management System that manages books, pat
 ## Core Requirements & Architecture :clipboard:
 * **Classes (4+):** `Book` (Base), `EBook`, `PrintedBook`, `Patron`, `Transaction`, and `Library`.
 * **Inheritance & Polymorphism:** `EBook` and `PrintedBook` inherit from `Book`, overriding virtual methods like `displayInfo()`.
-* **Operator Overloading:** Stored efficiently using `std::vector` and `std::map` containers.
+* **Operator Overloading:** Overloads the `==` and `<<` operators for both `Book` and `Patron` classes to allow easy comparisons and standard stream printing.
 * **Data Collections:** Stored efficiently using `std::vector` and `std::map` containers.
 * **File I/O:** Loads database collections from text/CSV files and dynamically saves updates back to disk.
 
