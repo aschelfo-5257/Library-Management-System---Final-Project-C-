@@ -1,0 +1,5 @@
+Fiction, The Great Gatsby, F. Scott Fitzgerald, Printed,180
+Science, Quantum Physics 101, Albert Einstein, EBook,4.5
+Mystery, The Adventures of Sherlock Holmes, Arthur Conan Doyle, Printed,320
+Science, A Brief History of Time, Stephen Hawking, EBook,2.1
+Biography, Steve Jobs, Walter Isaacson, Printed,656
