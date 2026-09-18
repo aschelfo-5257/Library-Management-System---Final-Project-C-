@@ -1,5 +1,5 @@
-#ifndef EBOOK_H
-#define EBOOK_H
+#ifndef BOOK_H
+#define BOOK_H
 
 #include <string>
 #include <iostream>
@@ -20,18 +20,12 @@ public:
   virtual ~Book() = default;
 
   // Getters & Setters
-  std::string getTitle() const {
-    return title;
-  }
-  std::string getIsbn() const {
-    return isbn;
-  }
-  bool getAvailability() const {
-    return isAvailable;
-  }
-  void setAvailability() const {
-    isAvailable = status;
-  }
+  std::string getTitle() const { return title; }
+  std::string getIsbn() const { return isbn; }
+  bool getAvailability() const { return isAvailable; }
+
+  // Bool status parameter
+  void setAvailability(bool status) { isAvailable = status; }
 
   // Polymorphic method
   virtual void displayInfo() const = 0;
