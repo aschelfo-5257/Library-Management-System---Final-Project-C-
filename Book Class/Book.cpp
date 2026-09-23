@@ -6,7 +6,7 @@ Book::Book(std::string t, std::string a, std::string i, bool available)
 
 // Print base details
 void Book::displayInfo() const {
-  std::cout << "Title: " << title << "\nAuthor: " author
+  std::cout << "Title: " << title << "\nAuthor: " << author
             << "\nISBN: " << isbn << "\nAvailable: " << (isAvailable ? "Yes" : "No") << std::endl;
 }
 
