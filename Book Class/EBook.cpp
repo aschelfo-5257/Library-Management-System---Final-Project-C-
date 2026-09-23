@@ -5,9 +5,9 @@ EBook::EBook(std::string t, std::string a, std::string i, double size, bool avai
     : Book(t, a, i, available), fileSize(size) {}
 
 // Print base details
-void EBook::displayInfo() const {
-    Book::displayInfo(); 
-    std::cout << "File Size: " << fileSize << " MB" << std::endl;
+void Book::displayInfo() const {
+    std::cout << "Title: " << title << "\nAuthor: " << author 
+              << "\nISBN: " << isbn << "\nAvailable: " << (isAvailable ? "Yes" : "No") << std::endl;
 }
 
 // Overload << for simple stream printing
