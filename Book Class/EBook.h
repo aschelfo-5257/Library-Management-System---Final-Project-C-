@@ -28,17 +28,15 @@ public:
   void setAvailability(bool status) { isAvailable = status; }
 
   // Polymorphic method
-  virtual void displayInfo() const = 0;
+  virtual void displayInfo() const; 
 
   // Operator Overloading
   bool operator==(const Book& other) const {
     return this->isbn == other.isbn;
   }
 
-  friend std::ostream& operator<<(std::ostream& os, const Book& book) {
-    os << "Title: " << book.title << " | Author: " << book.author << " | ISBN: " << book.isbn;
-    return os;
-  }
+  friend std::ostream& operator<<(std::ostream& os, const Book& book);
+
 };
 
 #endif
