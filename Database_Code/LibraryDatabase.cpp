@@ -6,7 +6,7 @@
 void LibraryDatabase::loadBooks() {
   std::ifstream file(bookFilePath);
 
-  if (!file.is_open) {
+  if (!file.is_open()) {
     throw FileNotFoundException(bookFilePath);
   }
 
