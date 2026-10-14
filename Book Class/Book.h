@@ -5,32 +5,26 @@
 #include <iostream>
 
 enum class Genre { FICTION, NON_FICTION, TEXTBOOK, MYSTERY, THRILLER };
-enum class BookStatus { AVAILABLE, CHECKED_OUT, RESERVED };
 
 class Book {
 protected:
     std::string title;
     std::string author;
-    Genre genre;
-    BookStatus status;
+    std::string isbn;
+    bool isAvailable;
 
 public:
-    // Constructor
-    Book(std::string t, std::string a, Genre g);
-    
-    // Virtual Destructor for safe inheritance
+    Book(std::string t, std::string a, std::string i, bool avail = true)
+        : title(t), author(a), isbn(i), isAvailable(avail) {}
+
     virtual ~Book() = default;
 
-    // Polymorphic method
-    virtual void displayInfo() const;
-    
-    // Getters & Setters
-    void setStatus(BookStatus s);
-    BookStatus getStatus() const;
+    std::string getTitle() const { return title; }
+    std::string getIsbn() const { return isbn; }
+    bool getAvailability() const { return isAvailable; }
+    void setAvailability(bool status) { isAvailable = status; }
 
-    // Operator Overloading
-    bool operator==(const Book& other) const;
-    friend std::ostream& operator<<(std::ostream& os, const Book& b);
+    virtual void displayInfo() const = 0; // Pure virtual makes it polymorphic!
 };
 
 #endif
