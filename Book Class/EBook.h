@@ -1,42 +1,16 @@
-#ifndef BOOK_H
-#define BOOK_H
+#ifndef EBOOK_H
+#define EBOOK_H
 
-#include <string>
-#include <iostream>
+#include "Book.h"
 
-class Book {
-protected:
-  std::string title;
-  std::string author;
-  std::string isbn;
-  bool isAvailable;
+class EBook : public Book {
+private:
+    double fileSize;
 
 public:
-  // Constructor
-  Book(std::string t, std::string a, std::string i, bool avail = true)
-    : title(t), author(a), isbn(i), isAvailable(avail) {}
+    EBook(std::string t, std::string a, std::string i, double size);
 
-  // Virtual Destructor for safe inheritance
-  virtual ~Book() = default;
-
-  // Getters & Setters
-  std::string getTitle() const { return title; }
-  std::string getIsbn() const { return isbn; }
-  bool getAvailability() const { return isAvailable; }
-
-  // Bool status parameter
-  void setAvailability(bool status) { isAvailable = status; }
-
-  // Polymorphic method
-  virtual void displayInfo() const; 
-
-  // Operator Overloading
-  bool operator==(const Book& other) const {
-    return this->isbn == other.isbn;
-  }
-
-  friend std::ostream& operator<<(std::ostream& os, const Book& book);
-
+    void displayInfo() const override;
 };
 
 #endif
