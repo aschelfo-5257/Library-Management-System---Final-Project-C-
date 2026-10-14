@@ -26,7 +26,7 @@ public:
 
     // Overloaded Operators
     bool operator==(const Patron& other) const;
-    friend std::ostream& operator<<(std::ostream& os, const Patron& p);
+    friend std::ostream &operator<<(std::ostream& os, const Patron& p);
 };
 
 #endif
