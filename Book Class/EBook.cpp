@@ -1,17 +1,14 @@
 #include "EBook.h"
+#include <iostream>
 
-// Constructor implementation
-EBook::EBook(std::string t, std::string a, std::string i, double size, bool available)
-    : Book(t, a, i, available), fileSize(size) {}
+// Matches the base constructor
+EBook::EBook(std::string t, std::string a, std::string i, double size)
+    : Book(t, a, i), fileSize(size) {}
 
-// Print base details
-void Book::displayInfo() const {
-    std::cout << "Title: " << title << "\nAuthor: " << author 
-              << "\nISBN: " << isbn << "\nAvailable: " << (isAvailable ? "Yes" : "No") << std::endl;
-}
-
-// Overload << for simple stream printing
-std::ostream& operator<<(std::ostream& os, const Book& book) {
-  os << book.title << " by " << book.author << "[ISBN: " << book.isbn << "]";
-  return os;
+void EBook::displayInfo() const {
+    std::cout << "[E-Book] Title: " << title
+              << ", Author: " << author
+              << ", ISBN: " << isbn
+              << ", File Size: " << fileSize << " MB"
+              << ", Available: " << (isAvailable ? "Yes" : "No") << std::endl;
 }
